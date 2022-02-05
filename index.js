@@ -10,6 +10,7 @@ app.get('/',(req,res)=>{
   res.render("form")  
 })
 app.post('/resume',(req,res)=>{
-    res.render("resume",{names:req.body.names,college_name:req.body.college_name})
+  const bio = req.body.bio;
+    res.render("resume",{names:req.body.names,college_name:req.body.college_name, bio:bio})
 })
 app.listen(port, () => console.log(` on local host ${port}!`))
